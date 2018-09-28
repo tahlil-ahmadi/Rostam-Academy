@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Academy.Persistence.EF", "A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Academy.Application", "Academy.Application\Academy.Application.csproj", "{F5145C8A-0320-45D1-8E36-6DA0AE57975E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Academy.Config", "Academy.Config\Academy.Config.csproj", "{1CECF15E-BC6D-4CEA-AEA2-75824DB24B13}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{F5145C8A-0320-45D1-8E36-6DA0AE57975E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5145C8A-0320-45D1-8E36-6DA0AE57975E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5145C8A-0320-45D1-8E36-6DA0AE57975E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CECF15E-BC6D-4CEA-AEA2-75824DB24B13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CECF15E-BC6D-4CEA-AEA2-75824DB24B13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CECF15E-BC6D-4CEA-AEA2-75824DB24B13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CECF15E-BC6D-4CEA-AEA2-75824DB24B13}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

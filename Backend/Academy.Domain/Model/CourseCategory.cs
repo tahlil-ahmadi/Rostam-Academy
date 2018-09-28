@@ -9,10 +9,5 @@ namespace Academy.Domain.Model
         public long Id { get; set; }
         public string Title { get; set; }
         public CourseCategory ParentCategory { get; set; }
-
-        //public CourseCategory(string title, string parent)
-        //{
-
-        //}
     }
 }
