@@ -4,6 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule }    from '@angular/common/http';
 
 import { TreeViewModule } from '@progress/kendo-angular-treeview';
+import { ButtonsModule } from '@progress/kendo-angular-buttons';
+import { DialogsModule } from '@progress/kendo-angular-dialog';
 
 import { CourseCategoryListComponent } from './course-categories/course-category-list/course-category-list.component';
 import { CourseCategoryComponent } from './course-categories/course-category/course-category.component';
@@ -18,6 +20,8 @@ const appRoutes: Routes = [
     imports:      [
       BrowserModule,
       TreeViewModule,
+      ButtonsModule,
+      DialogsModule,
       HttpClientModule,
       RouterModule.forRoot(appRoutes)
      ],

@@ -1,3 +1,5 @@
+<button kendoButton [icon]="'add'" (click)="addRoot()">Add Root</button>
+
 <kendo-treeview kendoTreeViewExpandable 
     [nodes]="courseCategories" textField="title"
     [children]="fetchChildren"  [hasChildren]="hasChildren">
@@ -8,3 +10,5 @@
         <span class="k-icon k-i-delete pointer" (click)="delete(dataItem)"></span>
     </ng-template>
 </kendo-treeview>
+
+<div kendoDialogContainer></div>
