@@ -25,6 +25,7 @@ namespace Academy.Interface.RestApi
         public IConfiguration Configuration { get; }
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             AcademyBootstrapper.WireUp(services);  
         }
@@ -35,6 +36,12 @@ namespace Academy.Interface.RestApi
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors(builder =>
+            {
+                builder.WithOrigins("http://localhost:4200")
+                    .AllowAnyHeader()
+                    .AllowAnyMethod();
+            });
             app.UseMvc();
         }
     }

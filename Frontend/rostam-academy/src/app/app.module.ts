@@ -4,10 +4,12 @@ import {AcademyModule} from './academy/academy.module';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { MenuBarComponent } from './menu-bar/menu-bar.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MenuBarComponent
   ],
   imports: [
     BrowserModule,

@@ -14,7 +14,7 @@ namespace Academy.Persistence.EF
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"data source=RC6\MSSQLSERVER1;initial catalog=AcademyDb;integrated security=true");
+            optionsBuilder.UseSqlServer(@"data source=CLASS1-TEACHER\MSSQLSERVER1;initial catalog=AcademyDb;integrated security=true");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

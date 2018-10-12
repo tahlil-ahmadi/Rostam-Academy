@@ -1,15 +1,20 @@
 import { Component } from '@angular/core';
 import { CourseCategory } from '../shared/course-category.model';
+import { CourseCategoryService } from '../shared/course-category.service';
 
 @Component({
     selector: 'course-category-list',
     templateUrl: './course-category-list.component.html',
 })
 export class CourseCategoryListComponent {
-    courseCategories:Array<CourseCategory>;
-    constructor(){
-        this.courseCategories = new Array<CourseCategory>();
-        this.courseCategories.push(new CourseCategory(1,"Web Programming"));
-        this.courseCategories.push(new CourseCategory(2,"Mobile Programming"));
+    private service:CourseCategoryService;
+    private courseCategories: Array<CourseCategory>;    
+    constructor(service: CourseCategoryService) {
+        this.service = service;
+        this.service.getAll().subscribe((data:Array<CourseCategory>)=>{
+            this.courseCategories = data;
+        });
     }
+
+
 }
