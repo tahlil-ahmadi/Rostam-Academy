@@ -13,7 +13,7 @@ namespace Academy.Persistence.EF.Mappings
         {
             builder.ToTable("CourseCategories").HasKey(a => a.Id);
             builder.Property(a => a.Title).HasMaxLength(255).IsRequired();
-            builder.HasOne(a => a.ParentCategory).WithMany();
+            builder.HasOne(a => a.ParentCategory).WithMany(a=>a.ChildCategories);
         }
     }
 }

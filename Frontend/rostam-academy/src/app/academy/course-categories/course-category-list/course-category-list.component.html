@@ -1,5 +1,10 @@
-<ul>
-    <li *ngFor="let category of courseCategories">
-        {{category.id}} - {{category.title}}
-    </li>
-</ul>
+<kendo-treeview kendoTreeViewExpandable 
+    [nodes]="courseCategories" textField="title"
+    [children]="fetchChildren"  [hasChildren]="hasChildren">
+
+    <ng-template kendoTreeViewNodeTemplate let-dataItem>
+        {{dataItem.title}}
+        <span class="k-icon k-i-edit pointer" (click)="edit(dataItem)"></span>
+        <span class="k-icon k-i-delete pointer" (click)="delete(dataItem)"></span>
+    </ng-template>
+</kendo-treeview>

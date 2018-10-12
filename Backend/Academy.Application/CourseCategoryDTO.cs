@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Academy.Domain.Model
+namespace Academy.Application
 {
-    public class Course
+    public class CourseCategoryDTO
     {
         public long Id { get; set; }
         public string Title { get; set; }
-        public CourseCategory Category { get; set; }
+        public List<CourseCategoryDTO> ChildCategories { get; set; }
     }
 }

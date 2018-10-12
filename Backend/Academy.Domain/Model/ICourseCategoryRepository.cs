@@ -7,5 +7,8 @@ namespace Academy.Domain.Model
     public interface ICourseCategoryRepository
     {
         void Add(CourseCategory courseCategory);
+        List<CourseCategory> GetAll();
+        CourseCategory GetById(long id);
+        void Delete(CourseCategory item);
     }
 }

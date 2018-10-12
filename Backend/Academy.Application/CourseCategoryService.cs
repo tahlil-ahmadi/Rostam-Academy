@@ -1,7 +1,9 @@
 ﻿using Academy.Domain.Model;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using Mapster;
 
 namespace Academy.Application
 {
@@ -19,6 +21,19 @@ namespace Academy.Application
                 Title = title
             };
             _repository.Add(courseCategory);
+        }
+
+        public List<CourseCategoryDTO> GetAll()
+        {
+            var data =  _repository.GetAll();
+            return data.Adapt<List<CourseCategoryDTO>>();
+        }
+
+        public void Delete(long id)
+        {
+            var item = _repository.GetById(id);
+            if (item != null)
+                _repository.Delete(item);
         }
     }
 }

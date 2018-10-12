@@ -6,6 +6,10 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { MenuBarComponent } from './menu-bar/menu-bar.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,7 +18,8 @@ import { MenuBarComponent } from './menu-bar/menu-bar.component';
   imports: [
     BrowserModule,
     RouterModule,
-    AcademyModule
+    AcademyModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Academy.Application;
-using Academy.Domain.Model;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Academy.Interface.RestApi.Controllers
@@ -18,15 +17,15 @@ namespace Academy.Interface.RestApi.Controllers
             this._service = service;
         }
 
-        public List<Course> Get()
+        public List<CourseCategoryDTO> Get()
         {
-            var data = new List<Course>
-            {
-                new Course() {Id = 1, Title = "Web Programming"},
-                new Course() {Id = 2, Title = "Mobile Programming"},
-                new Course() {Id = 3, Title = "Desktop Programming"}
-            };
-            return data;
+            return _service.GetAll();
+        }
+
+        [Route("{id}")]
+        public void Delete(long id)
+        {
+            _service.Delete(id);
         }
     }
 }

@@ -5,12 +5,17 @@ import { HttpClient } from "@angular/common/http";
 
 @Injectable()
 export class CourseCategoryService{
+    private url = "http://localhost:5000/api/courseCategories";
     
     constructor(private httpClient: HttpClient) {
     }
 
     getAll(): Observable<Array<CourseCategory>> {
-       var url = "http://localhost:5000/api/courseCategories";
-       return this.httpClient.get<Array<CourseCategory>>(url);
+       return this.httpClient.get<Array<CourseCategory>>(this.url);
+    }
+
+    delete(id:number): Observable<object> {
+        let deleteUrl = `${this.url}/${id}`;
+        return this.httpClient.delete(deleteUrl);
     }
 }
