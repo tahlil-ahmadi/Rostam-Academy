@@ -1,0 +1,35 @@
+
+<kendo-grid [data]="classes" [height]="410">
+  <kendo-grid-column field="title" title="ID" width="250">
+  </kendo-grid-column>
+  <kendo-grid-column field="number" title="Name" width="250">
+  </kendo-grid-column>
+</kendo-grid>
+
+<div class="example-wrapper">
+  <button kendoButton *ngIf="!opened" (click)="open()">ثبت کلاس</button>
+  <p *ngIf="dataSaved">Data has been saved</p>
+  <kendo-window title="Please provide additional data" *ngIf="opened" (close)="close()" [minWidth]="250" [width]="450">
+
+    <form class="k-form">
+      <fieldset>
+        <legend>مشخصات کلاس</legend>
+
+        <label class="k-form-field">
+          <span>نام کلاس</span>
+          <input class="k-textbox" placeholder="نام کلاس" />
+        </label>
+        <label class="k-form-field">
+          <span>شماره کلاس</span>
+          <input class="k-textbox" placeholder="شماره کلاس" />
+        </label>
+      </fieldset>
+
+      <div class="text-right">
+        <button type="button" class="k-button" (click)="close()">Cancel</button>
+        <button type="button" class="k-button k-primary" (click)="submit('spa',1)">Submit</button>
+      </div>
+    </form>
+
+  </kendo-window>
+</div>

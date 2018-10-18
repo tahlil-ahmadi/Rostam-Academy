@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using Academy.Domain.Model;
 
-namespace Academy.Application
+namespace Academy.Application.CourseCategories
 {
     public interface ICourseCategoryService
     {

@@ -1,11 +1,8 @@
-﻿using Academy.Domain.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
+using Academy.Domain.Model.Courses;
 using Mapster;
 
-namespace Academy.Application
+namespace Academy.Application.CourseCategories
 {
     public class CourseCategoryService : ICourseCategoryService
     {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Academy.Application;
+using Academy.Application.CourseCategories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Academy.Interface.RestApi.Controllers

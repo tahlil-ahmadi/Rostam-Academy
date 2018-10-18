@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
-namespace Academy.Domain.Model
+namespace Academy.Domain.Model.Courses
 {
     public interface ICourseCategoryRepository
     {
