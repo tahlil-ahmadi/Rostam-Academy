@@ -11,11 +11,11 @@ namespace Academy.Application.CourseCategories
         {
             this._repository = repository;
         }
-        public void Create(string title)
+        public void Create(CreateCourseCategoryDTO dto)
         {
             var courseCategory = new CourseCategory()
             {
-                Title = title
+                Title = dto.Title
             };
             _repository.Add(courseCategory);
         }

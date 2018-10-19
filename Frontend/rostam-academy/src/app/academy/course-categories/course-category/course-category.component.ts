@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { DialogRef } from '@progress/kendo-angular-dialog';
-import { DialogResponse } from '../../dialog-response.enum';
+import { OK, Cancel } from '../../dialog-response.enum';
+import { CourseCategory } from '../shared/course-category.model';
+import { CourseCategoryService } from '../shared/course-category.service';
 
 @Component({
     selector: 'course-category',
@@ -8,14 +10,18 @@ import { DialogResponse } from '../../dialog-response.enum';
 })
 export class CourseCategoryComponent {
    
-    constructor(private dialog: DialogRef) {
+    private model:CourseCategory;
+    constructor(private dialog: DialogRef, private service:CourseCategoryService) {
+        this.model = new CourseCategory();
     }
 
     public save(): void {
-        this.dialog.close(DialogResponse.OK);
+        this.service.save(this.model).subscribe(a=>{
+            this.dialog.close(OK);
+        });
     }
 
     public cancel(): void {
-        this.dialog.close(DialogResponse.Cancel);
+        this.dialog.close(Cancel);
     }
 }

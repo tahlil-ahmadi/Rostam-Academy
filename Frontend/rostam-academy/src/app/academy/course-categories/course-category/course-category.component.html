@@ -1,9 +1,15 @@
-<div>
-    Title : 
-    <input type="text">
-</div>
+<form #categoryForm="ngForm">
+    <div class="form-group" >
+        <label for="title">Title : </label>
+        <input type="text" [(ngModel)]="model.title"
+                required minlength="3"
+                name="title" id="title" #title="ngModel">
+        <span style="color: red" *ngIf="title.errors?.required">الزامی است</span>
+        <span style="color: red" *ngIf="title.errors?.minlength">عبارت کوتاه است</span>
+    </div>   
+</form>
 
 <div>
-    <button kendoButton (click)="save()">Save</button>
+    <button kendoButton (click)="save()" [disabled]="categoryForm.invalid">Save</button>
     <button kendoButton (click)="cancel()">Cancel</button>
 </div>
