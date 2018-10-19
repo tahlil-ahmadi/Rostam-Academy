@@ -5,7 +5,7 @@ namespace Academy.Application
 {
     public interface ICourseCategoryService
     {
-        void Create(string title);
+        void Create(CreateCourseCategoryDTO dto);
         List<CourseCategoryDTO> GetAll();
         void Delete(long id);
     }

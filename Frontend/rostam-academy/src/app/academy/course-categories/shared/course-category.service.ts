@@ -18,4 +18,8 @@ export class CourseCategoryService{
         let deleteUrl = `${this.url}/${id}`;
         return this.httpClient.delete(deleteUrl);
     }
+
+    save(model: CourseCategory): Observable<any>{
+        return this.httpClient.post(this.url,model);
+    }
 }

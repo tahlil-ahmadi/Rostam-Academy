@@ -4,7 +4,7 @@ import { CourseCategoryService } from '../shared/course-category.service';
 import { Observable, of } from 'rxjs';
 import { DialogService, DialogCloseResult } from '@progress/kendo-angular-dialog';
 import { CourseCategoryComponent } from '../course-category/course-category.component';
-import { DialogResponse } from '../../dialog-response.enum';
+import { OK } from '../../dialog-response.enum';
 
 @Component({
     selector: 'course-category-list',
@@ -36,7 +36,6 @@ export class CourseCategoryListComponent implements OnInit {
     }
 
     public delete(item: CourseCategory):void {
-        debugger;
         this.service.delete(item.id).subscribe((a:any)=>{
             this.loadCourseCategories();
         });
@@ -53,9 +52,13 @@ export class CourseCategoryListComponent implements OnInit {
         });
 
         dialogRef.result.subscribe((result:any)=>{
-            if (result == DialogResponse.OK){
+            if (result == OK){
                 this.loadCourseCategories();
             }
         });
+    }
+
+    public addChild(item: CourseCategory) : void {
+        alert(item.id);
     }
 }

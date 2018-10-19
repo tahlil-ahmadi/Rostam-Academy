@@ -200,3 +200,7 @@ h2{
 .pointer{
 	cursor: pointer;
 }
+
+.active-menu {
+	color: red;
+}

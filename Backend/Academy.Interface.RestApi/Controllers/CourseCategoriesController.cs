@@ -22,6 +22,12 @@ namespace Academy.Interface.RestApi.Controllers
             return _service.GetAll();
         }
 
+        [HttpPost]
+        public void Post(CreateCourseCategoryDTO dto)
+        {
+            _service.Create(dto);
+        }
+
         [Route("{id}")]
         public void Delete(long id)
         {
