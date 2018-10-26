@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Mapster;
+using System.Threading.Tasks;
 
 namespace Academy.Application
 {
@@ -30,9 +31,9 @@ namespace Academy.Application
             _repository.Update(courseCategory);
         }
 
-        public List<CourseCategoryDTO> GetAll()
+        public async Task<List<CourseCategoryDTO>> GetAll()
         {
-            var data =  _repository.GetAll();
+            var data =  await _repository.GetAll();
             return data.Adapt<List<CourseCategoryDTO>>();
         }
 

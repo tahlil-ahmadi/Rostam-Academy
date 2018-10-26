@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using Academy.Domain.Model;
 
 namespace Academy.Application
@@ -7,7 +8,7 @@ namespace Academy.Application
     {
         void Create(CreateCourseCategoryDTO dto);
         void Update(ModifyCourseCategoryDTO dto);
-        List<CourseCategoryDTO> GetAll();
+        Task<List<CourseCategoryDTO>> GetAll();
         void Delete(long id);
     }
 }

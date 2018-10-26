@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 namespace Academy.Persistence.EF
 {
@@ -26,12 +27,11 @@ namespace Academy.Persistence.EF
             context.SaveChanges();
         }
 
-        public List<CourseCategory> GetAll()
+        public async Task<List<CourseCategory>> GetAll()
         {
             //TODO: we should only load roots (temporally)
-            return context.CourseCategories.ToList()
-                          .Where(a=>a.ParentCategory == null)
-                          .ToList();
+            var data = await context.CourseCategories.ToListAsync();
+            return data.Where(a => a.ParentCategory == null).ToList();
         }
 
         public CourseCategory GetById(long id)

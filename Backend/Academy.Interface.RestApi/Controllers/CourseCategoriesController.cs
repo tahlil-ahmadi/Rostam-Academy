@@ -11,15 +11,15 @@ namespace Academy.Interface.RestApi.Controllers
     [ApiController]
     public class CourseCategoriesController : ControllerBase
     {
-        private ICourseCategoryService _service;
+        private readonly ICourseCategoryService _service;
         public CourseCategoriesController(ICourseCategoryService service)
         {
             this._service = service;
         }
 
-        public List<CourseCategoryDTO> Get()
+        public async Task<List<CourseCategoryDTO>> Get()
         {
-            return _service.GetAll();
+            return await _service.GetAll();
         }
 
         [HttpPost]
