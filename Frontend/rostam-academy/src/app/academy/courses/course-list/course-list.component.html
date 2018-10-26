@@ -17,8 +17,10 @@
     </kendo-grid-column>
     <kendo-grid-column width="120" filter="boolean">
         <ng-template kendoGridCellTemplate let-dataItem>
-            <span class="k-icon k-i-edit pointer"></span>
-            <span class="k-icon k-i-delete pointer"></span>
+            <span class="k-icon k-i-edit pointer" (click)="edit(dataItem)"></span>
+            <span class="k-icon k-i-delete pointer" (click)="delete(dataItem)"></span>
+            <!-- <span class="k-icon k-i-edit pointer" [routerLink]="['/course/' + dataItem.id]"></span>
+            <span class="k-icon k-i-delete pointer" ></span> -->
         </ng-template>
     </kendo-grid-column>
 </kendo-grid>

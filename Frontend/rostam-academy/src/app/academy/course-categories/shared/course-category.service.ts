@@ -20,6 +20,11 @@ export class CourseCategoryService{
     }
 
     save(model: CourseCategory): Observable<any>{
-        return this.httpClient.post(this.url,model);
+        if (model.id){
+            var modifyUrl = `${this.url}/${model.id}`
+            return this.httpClient.put(modifyUrl,model);
+        }
+        else
+            return this.httpClient.post(this.url,model);    
     }
 }

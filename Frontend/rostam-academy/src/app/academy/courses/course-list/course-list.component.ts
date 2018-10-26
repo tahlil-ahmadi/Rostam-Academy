@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Course } from '../shared/course.model';
-import { CourseGridService } from 'src/app/academy/courses/shared/course.service';
 import { Observable } from 'rxjs';
 import { State } from '@progress/kendo-data-query';
 import { DataStateChangeEvent, GridDataResult } from '@progress/kendo-angular-grid';
+import { Router } from '@angular/router';
+import { CourseGridService } from '../shared/course-grid.service';
 
 @Component({
     selector: 'course-list',
@@ -16,17 +17,25 @@ export class CourseListComponent implements OnInit {
         skip: 0,
         take: 5
     };
-    constructor(private courseGridService: CourseGridService) {
-       this.courses = courseGridService;
+    constructor(private courseService: CourseGridService, 
+                private router: Router) {
+       this.courses = this.courseService;
     }
 
     public dataStateChange(state: DataStateChangeEvent): void {
         this.state = state;
-        debugger;
-        this.courseGridService.reload(this.state);
+        this.courseService.reload(this.state);
     }
 
     ngOnInit(): void {
-        this.courseGridService.reload(this.state);
+        this.courseService.reload(this.state);
+    }
+
+    edit(item:Course):void {
+        this.router.navigate([`/course/${item.id}`]);
+    }
+
+    delete(item:Course):void {
+
     }
 }

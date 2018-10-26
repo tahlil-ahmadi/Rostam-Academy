@@ -3,8 +3,8 @@ import { CourseCategory } from '../shared/course-category.model';
 import { CourseCategoryService } from '../shared/course-category.service';
 import { Observable, of } from 'rxjs';
 import { DialogService, DialogCloseResult } from '@progress/kendo-angular-dialog';
-import { CourseCategoryComponent } from '../course-category/course-category.component';
 import { OK } from '../../dialog-response.enum';
+import { CourseCategoryComponent } from '../course-category/course-category.component';
 
 @Component({
     selector: 'course-category-list',
@@ -42,17 +42,23 @@ export class CourseCategoryListComponent implements OnInit {
     }
 
     public edit(item: CourseCategory):void {
-        alert("you clicked on item " + item.title);
+        this.openCourseCategoryDialog(item);
     }
 
     public addRoot():void {
+        this.openCourseCategoryDialog(null);
+    }
+
+    private openCourseCategoryDialog(model: CourseCategory) {
         const dialogRef = this.dialogService.open({
             title: 'Add Root Course Category',
             content: CourseCategoryComponent
         });
 
-        dialogRef.result.subscribe((result:any)=>{
-            if (result == OK){
+        (dialogRef.content.instance as CourseCategoryComponent).model = model;
+
+        dialogRef.result.subscribe((result: any) => {
+            if (result == OK) {
                 this.loadCourseCategories();
             }
         });

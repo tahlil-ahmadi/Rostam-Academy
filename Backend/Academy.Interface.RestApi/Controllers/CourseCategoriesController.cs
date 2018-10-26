@@ -28,6 +28,14 @@ namespace Academy.Interface.RestApi.Controllers
             _service.Create(dto);
         }
 
+        [HttpPut]
+        [Route("{id}")]
+        public void Put(long id, ModifyCourseCategoryDTO dto)
+        {
+            dto.Id = id;
+            _service.Update(dto);
+        }
+
         [Route("{id}")]
         public void Delete(long id)
         {

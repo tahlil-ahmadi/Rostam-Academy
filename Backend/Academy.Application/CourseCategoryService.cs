@@ -23,6 +23,13 @@ namespace Academy.Application
             _repository.Add(courseCategory);
         }
 
+        public void Update(ModifyCourseCategoryDTO dto)
+        {
+            var courseCategory = _repository.GetById(dto.Id);
+            courseCategory.Title = dto.Title;
+            _repository.Update(courseCategory);
+        }
+
         public List<CourseCategoryDTO> GetAll()
         {
             var data =  _repository.GetAll();

@@ -20,6 +20,12 @@ namespace Academy.Persistence.EF
             context.SaveChanges();
         }
 
+        public void Update(CourseCategory courseCategory)
+        {
+            //TODO: remove this update and move to unit of work
+            context.SaveChanges();
+        }
+
         public List<CourseCategory> GetAll()
         {
             //TODO: we should only load roots (temporally)

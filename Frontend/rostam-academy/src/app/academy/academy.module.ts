@@ -10,16 +10,18 @@ import { DialogsModule } from '@progress/kendo-angular-dialog';
 import { GridModule } from '@progress/kendo-angular-grid';
 
 import { CourseCategoryListComponent } from './course-categories/course-category-list/course-category-list.component';
-import { CourseCategoryComponent } from './course-categories/course-category/course-category.component';
 import { CourseCategoryService } from './course-categories/shared/course-category.service';
 import { CourseListComponent } from './courses/course-list/course-list.component'
-import { CourseGridService } from './courses/shared/course.service';
+import { CourseGridService } from './courses/shared/course-grid.service';
+import { CourseCategoryComponent } from './course-categories/course-category/course-category.component';
+import { CourseComponent } from './courses/course/course.component';
+import { CourseService } from './courses/shared/course.service';
 
 // move to a seperate file
 const appRoutes: Routes = [
   { path: 'course-category-list', component: CourseCategoryListComponent },
-  { path: 'course-category', component: CourseCategoryComponent },
   { path: 'course-list', component: CourseListComponent },
+  { path: 'course/:id', component: CourseComponent },
 ];
 
 @NgModule({
@@ -35,13 +37,16 @@ const appRoutes: Routes = [
      ],
     providers:    [ 
       CourseCategoryService,
-      CourseGridService
+      CourseGridService,
+      CourseService
     ],
     declarations: [
       CourseCategoryListComponent,
       CourseCategoryComponent,
-      CourseListComponent
+      CourseListComponent,
+      CourseComponent
      ],
+    entryComponents:[CourseCategoryComponent],
     exports:      [ ],
     bootstrap:    [ ]
   })
