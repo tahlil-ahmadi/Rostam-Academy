@@ -11,12 +11,10 @@ namespace Academy.Persistence.EF
     {
         public DbSet<CourseCategory> CourseCategories { get; set; }
         public DbSet<Course> Courses { get; set; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public AcademyContext(DbContextOptions options):base(options)
         {
-            optionsBuilder.UseSqlServer(@"data source=CLASS1-TEACHER\MSSQLSERVER1;initial catalog=AcademyDb;integrated security=true");
+            
         }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new CourseCategoryMapping());

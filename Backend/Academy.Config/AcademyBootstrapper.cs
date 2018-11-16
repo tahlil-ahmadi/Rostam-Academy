@@ -3,17 +3,17 @@ using Academy.Domain.Model;
 using Academy.Persistence.EF;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using Microsoft.EntityFrameworkCore;
 
 namespace Academy.Config
 {
     public static class AcademyBootstrapper
     {
-        public static void WireUp(IServiceCollection services)
+        public static void AddAcademy(this IServiceCollection services, AcademyOptions options)
         {
-            //TODO: Singleton ?? O_o
-            services.AddSingleton<ICourseCategoryRepository, CourseCategoryRepository>();
-            services.AddSingleton<ICourseCategoryService, CourseCategoryService>();
-            services.AddSingleton<AcademyContext>();
+            services.AddScoped<ICourseCategoryRepository, CourseCategoryRepository>();
+            services.AddScoped<ICourseCategoryService, CourseCategoryService>();
+            services.AddDbContext<AcademyContext>(a=> a.ConfigForAcademy(options.ConnectionString));
         }
     }
 }

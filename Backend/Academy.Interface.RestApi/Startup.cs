@@ -18,16 +18,18 @@ namespace Academy.Interface.RestApi
 {
     public class Startup
     {
+        public IConfiguration Configuration { get; }
+        private AcademyOptions options;
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            options = configuration.Get<AcademyOptions>();
         }
-        public IConfiguration Configuration { get; }
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddCors();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            AcademyBootstrapper.WireUp(services);  
+            services.AddAcademy(options);
         }
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
