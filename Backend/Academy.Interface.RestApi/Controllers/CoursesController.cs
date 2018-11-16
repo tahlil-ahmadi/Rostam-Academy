@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Academy.Application;
+using Framework.Core.DataFiltering;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Academy.Interface.RestApi.Controllers
@@ -11,20 +12,15 @@ namespace Academy.Interface.RestApi.Controllers
     [ApiController]
     public class CoursesController : ControllerBase
     {
-        public GridResult<CourseDto> Get(long take, long skip)
+        private ICourseService _service;
+        public CoursesController(ICourseService service)
         {
-            //TODO:get from database
-            var data = new List<CourseDto>();
-            for (int i = 0; i < take; i++)
-            {
-                var random = new Random(Guid.NewGuid().GetHashCode()).Next(1, 10000);
-                data.Add(new CourseDto()
-                {
-                    Id = random,
-                    Title = $"title{random}"
-                });
-            }
-            return new GridResult<CourseDto>(data,50);
+            _service = service;
+        }
+
+        public PagedResult<CourseDto> Get([FromQuery]FilterRequest request)
+        {
+            return _service.Get(request);
         }
     }
 }

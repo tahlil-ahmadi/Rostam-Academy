@@ -3,15 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Academy.Interface.RestApi", "Academy.Interface.RestApi\Academy.Interface.RestApi.csproj", "{398732B5-C55A-42CB-AB65-9516D7087ABB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Academy.Interface.RestApi", "Academy.Interface.RestApi\Academy.Interface.RestApi.csproj", "{398732B5-C55A-42CB-AB65-9516D7087ABB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Academy.Domain", "Academy.Domain\Academy.Domain.csproj", "{64EB25C5-A65A-4C7D-8D04-90C119ACE4C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Academy.Domain", "Academy.Domain\Academy.Domain.csproj", "{64EB25C5-A65A-4C7D-8D04-90C119ACE4C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Academy.Persistence.EF", "Academy.Persistence.EF\Academy.Persistence.EF.csproj", "{AC46ADDD-EC6A-44BB-9024-CF51B93B3E7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Academy.Persistence.EF", "Academy.Persistence.EF\Academy.Persistence.EF.csproj", "{AC46ADDD-EC6A-44BB-9024-CF51B93B3E7A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Academy.Application", "Academy.Application\Academy.Application.csproj", "{F5145C8A-0320-45D1-8E36-6DA0AE57975E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Academy.Application", "Academy.Application\Academy.Application.csproj", "{F5145C8A-0320-45D1-8E36-6DA0AE57975E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Academy.Config", "Academy.Config\Academy.Config.csproj", "{1CECF15E-BC6D-4CEA-AEA2-75824DB24B13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Academy.Config", "Academy.Config\Academy.Config.csproj", "{1CECF15E-BC6D-4CEA-AEA2-75824DB24B13}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Academy", "Academy", "{E79BF8F6-0130-456F-AA28-6AA73941E568}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{9BFAB295-F0BB-4FAB-8B45-E3ED77E4EAA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Core", "Framework.Core\Framework.Core.csproj", "{FAF9DD61-C203-4947-B130-9EE7C3399094}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,9 +45,21 @@ Global
 		{1CECF15E-BC6D-4CEA-AEA2-75824DB24B13}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CECF15E-BC6D-4CEA-AEA2-75824DB24B13}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CECF15E-BC6D-4CEA-AEA2-75824DB24B13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAF9DD61-C203-4947-B130-9EE7C3399094}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAF9DD61-C203-4947-B130-9EE7C3399094}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAF9DD61-C203-4947-B130-9EE7C3399094}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAF9DD61-C203-4947-B130-9EE7C3399094}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{398732B5-C55A-42CB-AB65-9516D7087ABB} = {E79BF8F6-0130-456F-AA28-6AA73941E568}
+		{64EB25C5-A65A-4C7D-8D04-90C119ACE4C1} = {E79BF8F6-0130-456F-AA28-6AA73941E568}
+		{AC46ADDD-EC6A-44BB-9024-CF51B93B3E7A} = {E79BF8F6-0130-456F-AA28-6AA73941E568}
+		{F5145C8A-0320-45D1-8E36-6DA0AE57975E} = {E79BF8F6-0130-456F-AA28-6AA73941E568}
+		{1CECF15E-BC6D-4CEA-AEA2-75824DB24B13} = {E79BF8F6-0130-456F-AA28-6AA73941E568}
+		{FAF9DD61-C203-4947-B130-9EE7C3399094} = {9BFAB295-F0BB-4FAB-8B45-E3ED77E4EAA3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {469D0901-C97B-4ED3-A477-6AAB5D203217}

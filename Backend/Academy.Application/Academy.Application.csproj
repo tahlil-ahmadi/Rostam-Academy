@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Academy.Domain\Academy.Domain.csproj" />
+    <ProjectReference Include="..\Framework.Core\Framework.Core.csproj" />
   </ItemGroup>
 
 </Project>

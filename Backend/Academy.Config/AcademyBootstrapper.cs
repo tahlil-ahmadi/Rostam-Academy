@@ -12,7 +12,9 @@ namespace Academy.Config
         public static void AddAcademy(this IServiceCollection services, AcademyOptions options)
         {
             services.AddScoped<ICourseCategoryRepository, CourseCategoryRepository>();
+            services.AddScoped<ICourseRepository, CourseRepository>();
             services.AddScoped<ICourseCategoryService, CourseCategoryService>();
+            services.AddScoped<ICourseService, CourseService>();
             services.AddDbContext<AcademyContext>(a=> a.ConfigForAcademy(options.ConnectionString));
         }
     }
