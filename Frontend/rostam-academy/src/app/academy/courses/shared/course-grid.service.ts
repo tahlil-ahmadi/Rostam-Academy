@@ -7,7 +7,7 @@ import { GridDataResult } from "@progress/kendo-angular-grid";
 
 @Injectable()
 export class CourseGridService extends BehaviorSubject<GridDataResult> {
-    private url = "http://localhost:5000/api/courses";
+    private url = "http://localhost:5550/api/courses";
     
     constructor(private httpClient: HttpClient) {
         super(null);

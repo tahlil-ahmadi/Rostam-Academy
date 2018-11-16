@@ -5,7 +5,7 @@ import { HttpClient } from "@angular/common/http";
 
 @Injectable()
 export class CourseCategoryService{
-    private url = "http://localhost:5000/api/courseCategories";
+    private url = "http://localhost:5550/api/courseCategories";
     
     constructor(private httpClient: HttpClient) {
     }

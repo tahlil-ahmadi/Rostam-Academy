@@ -16,12 +16,14 @@ import { CourseGridService } from './courses/shared/course-grid.service';
 import { CourseCategoryComponent } from './course-categories/course-category/course-category.component';
 import { CourseComponent } from './courses/course/course.component';
 import { CourseService } from './courses/shared/course.service';
+import { AuthModule } from '../auth/auth.module';
+import { AuthGuard } from '../auth/shared/auth-guard.service';
 
 // move to a seperate file
 const appRoutes: Routes = [
-  { path: 'course-category-list', component: CourseCategoryListComponent },
-  { path: 'course-list', component: CourseListComponent },
-  { path: 'course/:id', component: CourseComponent },
+  { path: 'course-category-list', component: CourseCategoryListComponent, canActivate:[AuthGuard] },
+  { path: 'course-list', component: CourseListComponent,canActivate:[AuthGuard] },
+  { path: 'course/:id', component: CourseComponent,canActivate:[AuthGuard] },
 ];
 
 @NgModule({
@@ -33,7 +35,8 @@ const appRoutes: Routes = [
       HttpClientModule,
       FormsModule,
       GridModule,
-      RouterModule.forRoot(appRoutes)
+      RouterModule.forRoot(appRoutes),
+      AuthModule,
      ],
     providers:    [ 
       CourseCategoryService,
