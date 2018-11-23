@@ -2,7 +2,7 @@ import { Course } from "./course.model";
 import { Injectable } from "@angular/core";
 import { Observable, of, BehaviorSubject } from "rxjs";
 import { HttpClient } from "@angular/common/http";
-import { State } from "@progress/kendo-data-query";
+import { State, toDataSourceRequestString } from "@progress/kendo-data-query";
 import { GridDataResult } from "@progress/kendo-angular-grid";
 
 @Injectable()
@@ -18,6 +18,8 @@ export class CourseGridService extends BehaviorSubject<GridDataResult> {
     }
 
     getAll(state: State): Observable<GridDataResult> {
+       //var serializedRequest = toDataSourceRequestString(state);
+       //debugger;
        var skip = state.skip;
        var take = state.take;
        const getUrl = `${this.url}?skip=${skip}&take=${take}`;
