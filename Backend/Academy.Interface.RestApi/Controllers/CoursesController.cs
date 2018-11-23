@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Academy.Application;
 using Framework.Core.DataFiltering;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Academy.Interface.RestApi.Controllers

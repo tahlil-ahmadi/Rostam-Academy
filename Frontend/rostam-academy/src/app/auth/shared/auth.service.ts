@@ -8,7 +8,6 @@ export class AuthService {
     private user:User;
 
     isUserLoggedIn() : boolean{
-        //TODO: also check for token expiration
         return this.user != null;
     }
     redirectToSts() {
@@ -17,8 +16,13 @@ export class AuthService {
 
     redirectCallback() {
         this.userManager.signinRedirectCallback().then(user=>{
+            debugger;
             this.user = user;
         })
+    }
+
+    getToken(): string {
+        return `${this.user.token_type} ${this.user.access_token}`;
     }
 
     getSettings() : UserManagerSettings{
@@ -28,7 +32,7 @@ export class AuthService {
             redirect_uri: 'http://localhost:4200/auth-callback',
             post_logout_redirect_uri: 'http://localhost:4200/',
             response_type: "id_token token",
-            scope: "openid profile",
+            scope: "openid profile academy-api",
             filterProtocolClaims: true,
             loadUserInfo: true,
             automaticSilentRenew: true,
