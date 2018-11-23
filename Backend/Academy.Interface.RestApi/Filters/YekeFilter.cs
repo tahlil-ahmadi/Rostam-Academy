@@ -20,11 +20,15 @@ namespace Academy.Interface.RestApi.Filters
             foreach (var item in data)
             {
                 var value = item.Value;
-                var properties = value.GetType().GetProperties().ToList();
+                var properties = value.GetType()
+                    .GetProperties()
+                    .Where(a=>a.PropertyType == typeof(string))
+                    .ToList();
 
                 foreach (var propertyInfo in properties)
                 {
                     var propertyValue = propertyInfo.GetValue(value).ToString();
+
                     propertyValue = propertyValue
                         .Replace(ArabicKeChar, PersianKeChar)
                         .Replace(ArabicYeChar, PersianYeChar);
