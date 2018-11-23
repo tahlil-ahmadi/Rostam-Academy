@@ -12,7 +12,8 @@ export class AuthGuard implements CanActivate {
             return true;
         }
         else {
-            this.authService.redirectToSts();
+            var returnUrl = state.url;
+            this.authService.redirectToSts(returnUrl);
             return false;
         }
     }

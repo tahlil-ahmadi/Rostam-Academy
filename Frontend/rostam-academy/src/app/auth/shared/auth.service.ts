@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { UserManagerSettings, UserManager, User } from "oidc-client"
+import { Router } from "@angular/router";
 
 @Injectable()
 export class AuthService {
@@ -7,17 +8,23 @@ export class AuthService {
     private userManager = new UserManager(this.getSettings());
     private user:User;
 
+    constructor(private router: Router){}
+
     isUserLoggedIn() : boolean{
         return this.user != null;
     }
-    redirectToSts() {
-        this.userManager.signinRedirect();
+    redirectToSts(returnUrl:string) {
+        var redirectConfig = {
+            state: returnUrl
+        };
+        this.userManager.signinRedirect(redirectConfig);
     }
 
     redirectCallback() {
         this.userManager.signinRedirectCallback().then(user=>{
             debugger;
             this.user = user;
+            this.router.navigate([user.state]);
         })
     }
 
