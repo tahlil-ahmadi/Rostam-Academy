@@ -18,6 +18,7 @@ import { CourseComponent } from './courses/course/course.component';
 import { CourseService } from './courses/shared/course.service';
 import { AuthModule } from '../auth/auth.module';
 import { AuthGuard } from '../auth/shared/auth-guard.service';
+import { CoreModule } from '../core/core.module';
 
 // move to a seperate file
 const appRoutes: Routes = [
@@ -37,6 +38,7 @@ const appRoutes: Routes = [
       GridModule,
       RouterModule.forRoot(appRoutes),
       AuthModule,
+      CoreModule
      ],
     providers:    [ 
       CourseCategoryService,

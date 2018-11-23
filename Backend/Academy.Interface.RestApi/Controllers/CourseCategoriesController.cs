@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Academy.Application;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace Academy.Interface.RestApi.Controllers
 {
@@ -12,9 +13,13 @@ namespace Academy.Interface.RestApi.Controllers
     public class CourseCategoriesController : ControllerBase
     {
         private readonly ICourseCategoryService _service;
-        public CourseCategoriesController(ICourseCategoryService service)
+        private readonly ILogger<CourseCategoriesController> _logger;
+
+        public CourseCategoriesController(ICourseCategoryService service, 
+            ILogger<CourseCategoriesController> logger)
         {
             this._service = service;
+            _logger = logger;
         }
 
         public async Task<List<CourseCategoryDTO>> Get()
@@ -25,6 +30,7 @@ namespace Academy.Interface.RestApi.Controllers
         [HttpPost]
         public void Post(CreateCourseCategoryDTO dto)
         {
+            _logger.LogInformation("data is {@dx}", dto);
             _service.Create(dto);
         }
 
