@@ -12,7 +12,7 @@ import { CourseCategoryComponent } from '../course-category/course-category.comp
 })
 export class CourseCategoryListComponent implements OnInit {
    
-    private courseCategories: Array<CourseCategory>;    
+    courseCategories: Array<CourseCategory>;    
     constructor(private service: CourseCategoryService,
                 private dialogService: DialogService) {
     }

@@ -22,4 +22,8 @@ export class CourseComponent implements OnInit {
         // });
         this.model = new Course(1,"Title !");
     }
+
+    save():void {
+
+    }
 }

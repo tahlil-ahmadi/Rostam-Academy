@@ -12,7 +12,7 @@ import { CourseGridService } from '../shared/course-grid.service';
 })
 export class CourseListComponent implements OnInit {
 
-    private courses: Observable<GridDataResult>;
+     courses: Observable<GridDataResult>;
     public state: State = {
         skip: 0,
         take: 5

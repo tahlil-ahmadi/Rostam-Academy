@@ -16,8 +16,8 @@ import { CourseGridService } from './courses/shared/course-grid.service';
 import { CourseCategoryComponent } from './course-categories/course-category/course-category.component';
 import { CourseComponent } from './courses/course/course.component';
 import { CourseService } from './courses/shared/course.service';
-import { AuthModule } from '../auth/auth.module';
-import { AuthGuard } from '../auth/shared/auth-guard.service';
+import { AuthModule } from '@auth/auth.module';
+import { AuthGuard } from '@auth/shared/auth-guard.service';
 
 // move to a seperate file
 const appRoutes: Routes = [

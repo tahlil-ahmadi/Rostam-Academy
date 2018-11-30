@@ -2,7 +2,7 @@ import { CourseCategory } from "./course-category.model";
 import { Injectable } from "@angular/core";
 import { Observable, of } from "rxjs";
 import { HttpClient } from "@angular/common/http";
-import { BaseHttpService } from "src/app/core/base-http.service";
+import { BaseHttpService } from "@core/base-http.service";
 
 @Injectable()
 export class CourseCategoryService extends BaseHttpService<CourseCategory> {
