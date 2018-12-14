@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Academy.Application.CourseCategories;
 
-namespace Academy.Application
+namespace Academy.Application.Courses
 {
     public class CourseDto
     {

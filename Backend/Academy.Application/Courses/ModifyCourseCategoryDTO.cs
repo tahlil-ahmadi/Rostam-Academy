@@ -1,4 +1,6 @@
-﻿namespace Academy.Application
+﻿using Academy.Application.CourseCategories;
+
+namespace Academy.Application.Courses
 {
     public class ModifyCourseCategoryDTO : CreateCourseCategoryDTO
     {

@@ -1,4 +1,4 @@
-﻿namespace Academy.Application
+﻿namespace Academy.Application.CourseCategories
 {
     public class CreateCourseCategoryDTO
     {

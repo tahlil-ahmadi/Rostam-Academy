@@ -1,4 +1,4 @@
-import { CourseCategory } from "./course-category.model";
+import { CourseCategory } from './course-category.model';
 import { Injectable } from "@angular/core";
 import { Observable, of } from "rxjs";
 import { HttpClient } from "@angular/common/http";
@@ -11,10 +11,10 @@ export class CourseCategoryService extends BaseHttpService<CourseCategory> {
     }
 
     save(model: CourseCategory): Observable<any> {
-        if (model.id){
-            return this.put(model)
+        if (model.id) {
+            return this.put(model, model.id);
         }
         else
-            return this.post(model)
+            return this.post(model);
     }
 }

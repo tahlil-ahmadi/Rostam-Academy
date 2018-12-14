@@ -1,31 +1,27 @@
-﻿using Academy.Domain.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.EntityFrameworkCore;
+﻿using System.Linq;
 using System.Threading.Tasks;
+using Academy.Domain.Model;
 using Framework.Core.DataFiltering;
 
-namespace Academy.Persistence.EF
+namespace Academy.Persistence.EF.Repositories
 {
     public class CourseRepository : ICourseRepository
     {
         private readonly AcademyContext _context;
-        public CourseRepository(AcademyContext context)
+        private readonly IFilterHelper _filterHelper;
+
+        public CourseRepository(AcademyContext context, IFilterHelper filterHelper)
         {
             this._context = context;
+            _filterHelper = filterHelper;
         }
 
-        public PagedResult<Course> Get(FilterRequest filter)
+        public async Task<PagedResult<Course>> Get(IFilter filter)
         {
-            var data = _context.Courses
+            var query = _context.Courses
                                 .OrderByDescending(a => a.Id)
-                                .Skip(filter.Skip)
-                                .Take(filter.Take)
-                                .ToList();
-            var count = _context.Courses.Count();
-            return new PagedResult<Course>(data, count);
+                                .AsQueryable();
+            return await _filterHelper.ApplyAsync(query, filter);
         }
     }
 }

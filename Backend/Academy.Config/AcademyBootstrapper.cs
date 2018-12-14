@@ -3,6 +3,11 @@ using Academy.Domain.Model;
 using Academy.Persistence.EF;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using Academy.Application.CourseCategories;
+using Academy.Application.Courses;
+using Academy.Persistence.EF.Repositories;
+using Framework.Core.DataFiltering;
+using Framework.Kendo;
 using Microsoft.EntityFrameworkCore;
 
 namespace Academy.Config
@@ -16,6 +21,7 @@ namespace Academy.Config
             services.AddScoped<ICourseCategoryService, CourseCategoryService>();
             services.AddScoped<ICourseService, CourseService>();
             services.AddDbContext<AcademyContext>(a=> a.ConfigForAcademy(options.ConnectionString));
+            services.AddSingleton<IFilterHelper, KendoFilterHelper>();
         }
     }
 }

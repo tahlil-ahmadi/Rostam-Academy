@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Framework.Core.DataFiltering
 {
-    public class FilterRequest
+    public interface IFilter
     {
-        public int Skip { get; set; }
-        public int Take { get; set; }
+        long Page { get; }
+        long PageSize { get; }
     }
 }

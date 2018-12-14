@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Academy.Domain.Model;
+using Academy.Application.Courses;
 
-namespace Academy.Application
+namespace Academy.Application.CourseCategories
 {
     public interface ICourseCategoryService
     {

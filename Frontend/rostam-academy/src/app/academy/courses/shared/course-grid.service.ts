@@ -18,11 +18,9 @@ export class CourseGridService extends BehaviorSubject<GridDataResult> {
     }
 
     getAll(state: State): Observable<GridDataResult> {
-       //var serializedRequest = toDataSourceRequestString(state);
-       //debugger;
-       var skip = state.skip;
-       var take = state.take;
-       const getUrl = `${this.url}?skip=${skip}&take=${take}`;
+       var serializedRequest = toDataSourceRequestString(state);
+       const getUrl = `${this.url}?${serializedRequest}`;
+       debugger;
        return this.httpClient.get<GridDataResult>(getUrl);
     }
 }

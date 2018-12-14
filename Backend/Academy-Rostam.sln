@@ -17,7 +17,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Academy", "Academy", "{E79B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{9BFAB295-F0BB-4FAB-8B45-E3ED77E4EAA3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Core", "Framework.Core\Framework.Core.csproj", "{FAF9DD61-C203-4947-B130-9EE7C3399094}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Core", "Framework.Core\Framework.Core.csproj", "{FAF9DD61-C203-4947-B130-9EE7C3399094}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Kendo", "Framework.Kendo\Framework.Kendo.csproj", "{6819673F-D3AA-4E53-B941-5A699791A82F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +51,10 @@ Global
 		{FAF9DD61-C203-4947-B130-9EE7C3399094}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAF9DD61-C203-4947-B130-9EE7C3399094}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FAF9DD61-C203-4947-B130-9EE7C3399094}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6819673F-D3AA-4E53-B941-5A699791A82F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6819673F-D3AA-4E53-B941-5A699791A82F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6819673F-D3AA-4E53-B941-5A699791A82F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6819673F-D3AA-4E53-B941-5A699791A82F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +66,7 @@ Global
 		{F5145C8A-0320-45D1-8E36-6DA0AE57975E} = {E79BF8F6-0130-456F-AA28-6AA73941E568}
 		{1CECF15E-BC6D-4CEA-AEA2-75824DB24B13} = {E79BF8F6-0130-456F-AA28-6AA73941E568}
 		{FAF9DD61-C203-4947-B130-9EE7C3399094} = {9BFAB295-F0BB-4FAB-8B45-E3ED77E4EAA3}
+		{6819673F-D3AA-4E53-B941-5A699791A82F} = {9BFAB295-F0BB-4FAB-8B45-E3ED77E4EAA3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {469D0901-C97B-4ED3-A477-6AAB5D203217}

@@ -22,7 +22,7 @@ export class CourseCategoryComponent implements OnInit {
 
     public save(): void {
         this.service.save(this.model).subscribe(a=>{
-             this.dialog.close(OK);
+            this.dialog.close(OK);
         });
     }
 

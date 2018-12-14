@@ -23,8 +23,8 @@ export abstract class BaseHttpService<T> {
         var curl = `${this.url}/${this.resourceName}`;
         return this.httpClient.post(curl,model);
     }
-    public put(model: T): Observable<any> {
-        var curl = `${this.url}/${this.resourceName}`;
+    public put(model: T, id: any): Observable<any> {
+        var curl = `${this.url}/${this.resourceName}/${id}`;
         return this.httpClient.put(curl,model);
     }
 }

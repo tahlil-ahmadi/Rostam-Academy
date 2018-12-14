@@ -1,12 +1,10 @@
-﻿using Academy.Domain.Model;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
+using Academy.Domain.Model;
+using Microsoft.EntityFrameworkCore;
 
-namespace Academy.Persistence.EF
+namespace Academy.Persistence.EF.Repositories
 {
     public class CourseCategoryRepository : ICourseCategoryRepository
     {

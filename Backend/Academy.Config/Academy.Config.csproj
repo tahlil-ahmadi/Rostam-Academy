@@ -12,6 +12,7 @@
     <ProjectReference Include="..\Academy.Application\Academy.Application.csproj" />
     <ProjectReference Include="..\Academy.Domain\Academy.Domain.csproj" />
     <ProjectReference Include="..\Academy.Persistence.EF\Academy.Persistence.EF.csproj" />
+    <ProjectReference Include="..\Framework.Kendo\Framework.Kendo.csproj" />
   </ItemGroup>
 
 </Project>
