@@ -1,4 +1,4 @@
-import { TestBed, ComponentFixture } from "@angular/core/testing";
+import { TestBed, ComponentFixture, fakeAsync, tick } from "@angular/core/testing";
 import { CourseCategoryComponent } from "./course-category.component";
 import { DialogRef } from "@progress/kendo-angular-dialog";
 import { CourseCategoryService } from "../shared/course-category.service";
@@ -55,16 +55,19 @@ describe('CourseCategory component', () => {
             });
         });
 
-        it('should close the dialog after successful save', () => {
+        fit('should close the dialog after successful save', fakeAsync(()=>{
             service.save.and.returnValue(of(true));
             fixture.componentInstance.model.title = "test";
             fixture.detectChanges();
-            fixture.whenStable().then(a=> {
-                fixture.debugElement.query(By.css('#saveButton')).nativeElement.click();
+            tick();
+            fixture.debugElement.query(By.css('#saveButton')).nativeElement.click();
+            expect(dialog.close).toHaveBeenCalledWith(OK);
 
-                expect(dialog.close).toHaveBeenCalledWith(OK);
-            });
-        })
+            // fixture.whenStable().then(a=> {
+            //     fixture.debugElement.query(By.css('#saveButton')).nativeElement.click();
+            //     expect(dialog.close).toHaveBeenCalledWith(OK);
+            // });
+        }))
     });
 
 });
